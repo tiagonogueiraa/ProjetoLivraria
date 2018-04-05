@@ -1,11 +1,12 @@
 <?php
 
-class Autor {
+class Autor 
+{
     
-    public $autor_id;
-    public $nome;
-    public $email;
-    public $data_nascimento;
+    private $autor_id;
+    private $nome;
+    private $email;
+    private $data_nascimento;
     
     
     
@@ -18,7 +19,7 @@ class Autor {
     }
     
     
-    function Autor($nome,$email,$data)
+    public function Autor($nome,$email,$data)
     {
         $this->nome = $nome;
         $this->email = $email;

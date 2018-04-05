@@ -1,7 +1,7 @@
 <?php
 
-require './conexao.inc';
-require './modeloLivraria.inc';
+require_once('conexao.inc');
+require_once('modeloLivraria.inc');
 
 
 class AutorDAO
@@ -16,7 +16,7 @@ class AutorDAO
     
     public function incluirAutor(Autor $autor)
     {
-        $sql = $this->con->prepare("insert into autores(nome, email,dt_nasc)values(:nom,:em,:data)");
+        $sql = $this->con->prepare("insert into autores(nome, email, dt_nasc) values (:nom,:em,:data)");
         
         $sql->bindValue(':nom', $autor->getNome());
         $sql->bindValue(':em', $autor->getEmail());
