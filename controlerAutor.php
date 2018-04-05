@@ -16,6 +16,37 @@ if($opcao == 1)
     
 }
 
+if($opcao == 3)
+{
+    $id = (int)$_REQUEST['id'];
+    
+    $autorDao = new AutorDAO();
+    
+    $autor = $autorDao->getAutor($id);
+    
+    session_start();
+    $_SESSION['autor'] = $autor;
+    
+    header("Location:formAutorAtualizar.php");
+    
+    
+}
+
+if($opcao == 5)
+{
+    $autor = new Autor($_POST['pNome'], $_POST['pEmail'],$_POST['pDatanasc']);
+    $autor->setAutor_id($_POST['pId']);
+    
+    $autorDao = new AutorDao();
+    
+    $autorDao->atualizarAutor($autor);
+    
+    header("Location:controlerAutor.php?opcao=2");
+    
+}
+
+
+
 
 ?>
 
