@@ -16,6 +16,14 @@ if($opcao == 1)
     
 }
 
+if($opcao == 2) {
+    $autorDao = new AutorDAO();
+    $lista = $autorDao->getAutores();
+    session_start();
+    $_SESSION["autores"]=$lista;
+    header("Location:exibirAutores.php");
+}
+
 if($opcao == 3)
 {
     $id = (int)$_REQUEST['id'];
@@ -29,6 +37,17 @@ if($opcao == 3)
     
     header("Location:formAutorAtualizar.php");
     
+    
+}
+
+if($opcao == 4)
+{
+    $id = (int) $_REQUEST["id"];
+    
+    $autorDao = new AutorDAO();
+    $autorDao->excluirAutor($id);
+    
+    header("Location:controlerAutor.php?opcao=2");
     
 }
 
