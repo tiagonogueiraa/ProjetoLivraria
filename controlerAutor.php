@@ -1,7 +1,7 @@
 <?php
-
+require_once('conexao.inc');
 require_once('modeloLivraria.inc');
-require_once('autorDao.php');
+require_once('autorDao.inc');
 
 $opcao = (int)$_REQUEST['opcao'];
 if($opcao == 1)
@@ -11,16 +11,22 @@ if($opcao == 1)
     
     $autorDao->incluirAutor($autor);
     
-    //header("Location:exibirAutores.php");
+    header("Location:controlerAutor.php?opcao=2");
     
     
 }
 
+
+
 if($opcao == 2) {
     $autorDao = new AutorDAO();
+    
     $lista = $autorDao->getAutores();
+    
     session_start();
-    $_SESSION["autores"]=$lista;
+    
+    $_SESSION['autores']=$lista;
+    
     header("Location:exibirAutores.php");
 }
 
