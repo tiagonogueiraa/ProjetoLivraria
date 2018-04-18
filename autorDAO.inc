@@ -29,6 +29,18 @@ class AutorDAO
         return date('Y-m-d', $data);
     }
     
+    public function getAutores(){
+        $rs = $this->con->query("SELECT * FROM autores");
+        
+        $lista = array();
+        while($autor=$rs->fetch(PDO::FETCH_OBJ)){
+            $lista[] = $autor;
+        }
+        
+        return $lista;
+    }
+
+
     
     public function excluirAutor($id)
     {
