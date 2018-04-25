@@ -17,7 +17,7 @@
             $sql = $this->con->prepare("insert into livros (isbn, titulo, edicao_num, ano_publicao, descricao, preco) values (:isbn, :tit, :edic, :ano, :desc, :prec)");
             $sql->bindValue(':isbn', $livro->getIsbn());
             $sql->bindValue(':tit', $livro->getTitulo());
-            $sql->
+            $sql->bindValue
                     
     }
 
