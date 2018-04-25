@@ -11,7 +11,9 @@
 
         }
 
-        $GLOBALS
+        session_start();
+
+	$autor = $_SESSION['autor'];
                 
        ?>
         
@@ -24,7 +26,7 @@
             </p>
             <p>
                 Nome do Autor: 
-                <input type="text" size="50" name="pNome" value="<?php echo $autor->nome?>"
+                <input type="text" size="50" name="nome" value="<?php echo $autor->nome?>"
             </p>
             <p>
                 E-mail de contato:
@@ -32,7 +34,7 @@
             </p>
             <p>
                 Data de Nascimento:
-                <input type="text" size="15" name="pDataNasc" value="<?php echo formatarData(strotime($autor->dt_nasc))?>">
+                <input type="text" size="15" name="pDataNasc" value="<?php echo formatarData(strtotime($autor->dt_nasc)) ?>">
             </p>
         </form>
         </center>
