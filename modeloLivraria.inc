@@ -140,55 +140,69 @@ class Publicacao {
     public $editora;
     public $preco;
     
-    function Publicacao(){
+    public function setPublicacao(){
+        $this->pub_id = $pub_id;
+        $this->isbn = $isbn;
+        $this->titulo = $titulo;
+        $this->autor = $autor;
+        $this->editora = $editora;
+        $this->preco = $preco;        
         
     }
     
-    function getPub_id() {
+    public function Publicacao($isbn, $titulo, $autor, $editora, $preco){
+        $this->isbn = $isbn;
+        $this->titulo = $titulo;
+        $this->autor = $autor;
+        $this->editora = $editora;
+        $this->preco = $preco;   
+    }
+    
+    public function getPub_id() {
         return $this->pub_id;
     }
 
-    function getIsbn() {
+    public function getIsbn() {
         return $this->isbn;
     }
 
-    function getTitulo() {
+    public function getTitulo() {
         return $this->titulo;
     }
 
-    function getAutor() {
+    public function getAutor() {
         return $this->autor;
     }
 
-    function getEditora() {
+    public function getEditora() {
         return $this->editora;
     }
 
-    function getPreco() {
+    public function getPreco() {
         return $this->preco;
     }
 
-    function setPub_id($pub_id) {
+    public function setPub_id($pub_id) {
         $this->pub_id = $pub_id;
     }
 
-    function setIsbn($isbn) {
+    public function setIsbn($isbn) {
         $this->isbn = $isbn;
     }
 
-    function setTitulo($titulo) {
+    public function setTitulo($titulo) {
         $this->titulo = $titulo;
     }
 
-    function setAutor($autor) {
+    public function setAutor($autor) {
         $this->autor = $autor;
     }
 
-    function setEditora($editora) {
+    public function setEditora($editora) {
         $this->editora = $editora;
     }
 
-    function setPreco($preco) {
+    public function setPreco($preco) {
         $this->preco = $preco;
     }
 
