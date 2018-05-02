@@ -140,7 +140,7 @@ class Publicacao {
     public $editora;
     public $preco;
     
-    public function setPublicacao(){
+    public function setPublicacao($pub_id, $isbn, $titulo, $autor, $editora, $preco){
         $this->pub_id = $pub_id;
         $this->isbn = $isbn;
         $this->titulo = $titulo;
