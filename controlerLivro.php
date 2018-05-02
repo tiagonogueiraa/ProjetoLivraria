@@ -6,21 +6,21 @@
     
     $opcao = (int)$_REQUEST['opcao'];
     
-    if($opcao==1){
+    if($opcao == 1){
 	$livro = new Livro($_POST['isbn'], $_POST['titulo'],$_POST['edicao_num'], $_POST['ano_publicacao'], $_POST['descricao'], $_POST['preco']);
 	
 	
-	$livroDAO = new LivroDAO();
+	$livroDao = new LivroDAO();
 	
 	$livroDao->incluirLivro($livro);
 	
 	header('Location:controlerLivro.php?opcao=2');
     }
     
-    if($opcao==2){
+    if($opcao == 2){
 	$livroDAO = new LivroDAO();
 	
-	$lista = $livroDAO->getLivro();
+	$lista = $livroDAO->getLivros();
 	
 	session_start();
 	
@@ -29,7 +29,7 @@
 	header('Location:exibirLivros.php');
     }
     
-    if(opcao==3){
+    if(opcao == 3){
 	
 	$isbn = $_REQUEST['isbn'];
 	
@@ -48,7 +48,7 @@
 	
     }
     
-    if(opcao==4){
+    if(opcao == 4){
 	
 	$isbn = $_REQUEST['isbn'];
 	

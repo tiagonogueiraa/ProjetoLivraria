@@ -43,6 +43,7 @@
                             <input type="text" name="preco">
                         </div>
                     </div>
+		    
                     <input type="hidden" name="opcao" value="1">
                     <div>
                         <button type="submit">Enviar</button>
