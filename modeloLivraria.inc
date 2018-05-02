@@ -131,4 +131,68 @@ class Livro {
 
 }
 
+
+class Publicacao {
+    public $pub_id;
+    public $isbn;
+    public $titulo;
+    public $autor;
+    public $editora;
+    public $preco;
+    
+    function Publicacao(){
+        
+    }
+    
+    function getPub_id() {
+        return $this->pub_id;
+    }
+
+    function getIsbn() {
+        return $this->isbn;
+    }
+
+    function getTitulo() {
+        return $this->titulo;
+    }
+
+    function getAutor() {
+        return $this->autor;
+    }
+
+    function getEditora() {
+        return $this->editora;
+    }
+
+    function getPreco() {
+        return $this->preco;
+    }
+
+    function setPub_id($pub_id) {
+        $this->pub_id = $pub_id;
+    }
+
+    function setIsbn($isbn) {
+        $this->isbn = $isbn;
+    }
+
+    function setTitulo($titulo) {
+        $this->titulo = $titulo;
+    }
+
+    function setAutor($autor) {
+        $this->autor = $autor;
+    }
+
+    function setEditora($editora) {
+        $this->editora = $editora;
+    }
+
+    function setPreco($preco) {
+        $this->preco = $preco;
+    }
+
+
+}
+
 ?>
