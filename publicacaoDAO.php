@@ -2,7 +2,7 @@
 
 require_once('conexao.inc');
 //require_once('../classes/publicacao.inc');
-require_once('publicacao.inc');
+require_once('modeloLivraria.inc');
 
 class PublicacaoDao
 {
@@ -32,7 +32,7 @@ class PublicacaoDao
                 while($row = $rs->fetch(PDO::FETCH_OBJ))
                 {
                            $publicacao = new Publicacao();
-                           $publicacao->setId($row->publicacao_id);
+                           $publicacao->setPub_id($row->publicacao_id);
                            $publicacao->setIsbn($row->isbn);
                            $publicacao->setTitulo($this->getTitulo($row->isbn));
                            $publicacao->setAutor($this->getAutor($row->autor_id));
@@ -53,7 +53,7 @@ class PublicacaoDao
                 $row = $sql->fetch(PDO::FETCH_OBJ);
 
                 $publicacao = new Publicacao();
-                $publicacao->setId($row->publicacao_id);
+                $publicacao->setPub_id($row->publicacao_id);
                 $publicacao->setIsbn($row->isbn);
                 $publicacao->setTitulo($this->getTitulo($row->isbn));
                 $publicacao->setAutor($this->getAutor($row->autor_id));

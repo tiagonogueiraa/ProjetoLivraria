@@ -3,7 +3,7 @@
  // require_once('../classes/modeloLivraria.inc');
  require_once('modeloLivraria.inc');
   //require_once('../dao/publicacaoDao.inc');
- require_once('publicacaoDao_!.php');
+ require_once('publicacaoDAO.php');
 
   $opcao = (int)$_REQUEST['opcao'];
 
@@ -17,7 +17,7 @@
       
       $_SESSION['publicacoes'] = $lista;
       
-      header("Location:../restrito/exibirPublicacoes.php");
+      header("Location:exibirPublicacoes.php");
   }
   
 ?>

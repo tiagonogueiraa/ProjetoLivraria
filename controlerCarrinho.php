@@ -1,12 +1,14 @@
 <?php
 
-$opcao = (int)$REQUEST['opcao'];
+require_once('publicacaoDAO.php');
+
+$opcao = (int)$_REQUEST['opcao'];
 
 if($opcao == 1 ) 
 {
-    $id = (int)$REQUEST['id'];
+    $id = (int)$_REQUEST['id'];
     
-    $publicacaoDao = new PublicaoDao();
+    $publicacaoDao = new PublicacaoDao();
     
     $publicacao = $publicacaoDao->getPublicacao($id);
     
