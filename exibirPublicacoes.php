@@ -1,7 +1,7 @@
 <?php
 header('Content-Type: text/html; charset=ISO-8859-1');
 //require_once('autenticar.inc');
-require_once('../classes/modeloLivraria.inc');
+require_once('modeloLivraria.inc');
 ?>
 <HTML>
     <HEAD>
@@ -16,8 +16,7 @@ require_once('../classes/modeloLivraria.inc');
               </div> -->
 
         <tr>
-            <td><?php echo "<a href='controlerCarrinho.php?opcao=1&id=" . $pub->getId() . "'>Adicionar no
-carrinho</a>" ?></td>
+           
         </tr>
         <?php
         session_start();
@@ -28,7 +27,7 @@ carrinho</a>" ?></td>
             ?>
             <table border="0" width="50%" cellspacing="5">
                 <tr>
-                    <td rowspan="5" align="center"><img src="../imagens/book_<?php echo $pub->getIsbn(); ?>.jpg" width="200" height="200" border="0"></td>
+                    <td rowspan="5" align="center"><img src="imagens/book_<?php echo $pub->getIsbn(); ?>.jpg" width="200" height="200" border="0"></td>
                 </tr>
                 <tr align="left">
                     <td><b><font face="Verdana" size="3"><?php echo $pub->getTitulo(); ?></font></b></td>
@@ -41,7 +40,7 @@ carrinho</a>" ?></td>
                 </tr>
                 <tr>
                     <td><b><font face="Verdana" size="5" color="red">R$ <?php echo $pub->getPreco(); ?></font></b></td>
-                    <td><?php echo "<a href='../controlers/controlerCarrinho.php?opcao=1&id=" . $pub->getId() . "'><img src='../imagens/botao_comprar2.png' border='0'></a>" ?></td>
+                    <td><?php echo "<a href='controlerCarrinho.php?opcao=1&id=" . $pub->getPub_Id() . "'><img src='imagens/botao_comprar2.png' border='0'></a>" ?></td>
                 </tr>
             </table>
             <p>
